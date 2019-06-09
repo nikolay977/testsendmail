@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'testsendmail'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+ext {
+    seleniumVersion = '3.141.59'
+    cucumberVersion = '4.2.2'
+    selenideVersion = '5.2.3'
+}
+
+dependencies {
+    testImplementation "com.codeborne:selenide:${selenideVersion}"
+    compile "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+    testCompile "io.cucumber:cucumber-java8:${cucumberVersion}"
+    testCompile "io.cucumber:cucumber-junit:${cucumberVersion}"}
